@@ -191,16 +191,10 @@ background: #003559;
 </div>
 <section id="description" class="level2">
 <h2 class="anchored" data-anchor-id="description">Description</h2>
-<p>{gtsummary} is the most widely used R package for creating presentation-ready summary tables across the R ecosystem. It provides an elegant and flexible way to summarize data sets, regression models, and more, with sensible defaults and a high degree of customization.</p>
-<p>In this seminar, we will introduce {gtsummary} and walk through how it fits into a reproducible reporting workflow. Topics include:</p>
-<ul>
-<li><p><strong>{gtsummary} fundamentals:</strong> Building summary tables with <code>tbl_summary()</code>; customizing statistics, labels, and rounding; and extending tables with <code>add_*()</code> functions (overall columns, N, p-values, and group differences, including adjusted differences) and <code>modify_*()</code> functions (headers, spanning headers, and footnotes).</p></li>
-<li><p><strong>Hierarchical and combined tables:</strong> Nested summaries such as adverse event tables with <code>tbl_hierarchical()</code>, including sorting and filtering, and assembling complex tables from simple parts with <code>tbl_merge()</code> and <code>tbl_stack()</code>.</p></li>
-<li><p><strong>Analysis Results Data (ARD):</strong> How every number in a {gtsummary} table is saved as a machine-readable ARD that you can extract with <code>gather_ard()</code>, and how the <code>tbl_ard_*()</code> functions build tables directly from ARDs created with {cards}.</p></li>
-<li><p><strong>Print engines and themes:</strong> Rendering tables with {gt}, {flextable}, and other engines, and setting defaults once with themes, from journal styles (e.g.&nbsp;JAMA) to compact formatting and translation.</p></li>
-<li><p><strong>Coding agents:</strong> Writing your table standards down in <code>AGENTS.md</code> and <code>SKILL.md</code> files so an AI coding agent follows them without constant reminders.</p></li>
-</ul>
-<p>No prior {gtsummary} experience is needed; familiarity with R and the tidyverse is assumed. By the end of the session, you will know how to get started with {gtsummary} and where to go next to tailor it to your own work.</p>
+<p>Summary tables are central to nearly every research report, from the “Table 1” describing a study population to detailed tables of outcomes and adverse events. Yet producing them reproducibly, and consistently across projects, often means writing custom formatting code again and again. {gtsummary} is the most widely used R package for creating presentation-ready summary tables, offering sensible defaults alongside a high degree of customization.</p>
+<p>This seminar introduces {gtsummary} for researchers and analysts who are comfortable in R but new to the package. We begin with <code>tbl_summary()</code>, showing how a single function call produces a publication-ready table and how add-on functions append overall columns, p-values, and (optionally adjusted) group differences. We then extend these ideas to hierarchical tables, such as adverse event summaries, and show how complex tables can be assembled from simple parts by merging and stacking.</p>
+<p>Next, we look under the hood: every number in a {gtsummary} table is stored as an Analysis Results Dataset (ARD), a machine-readable record that makes results traceable and reusable, and tables can be built directly from ARDs as well. We also cover print engines for rendering tables to different output formats, and themes that apply a journal’s style or a group’s house standards to every table at once.</p>
+<p>Finally, we discuss how these standards can be written down for AI coding agents, so that an agent produces tables that follow them without constant reminders. Attendees will leave knowing how to get started with {gtsummary} and where to go next to tailor it to their own work.</p>
 </section>
 <section id="slides" class="level2">
 <h2 class="anchored" data-anchor-id="slides">Slides</h2>
