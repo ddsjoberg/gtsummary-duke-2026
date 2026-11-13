@@ -42,11 +42,11 @@
     "text": "How it started\n\n\nBegan to address reproducibility issues while working in academia\nGoal to build a package to summarize study results with code that was both simple and customizable\n\n\n\nHow it’s going\n\n\nThe stats\n\n2,400,000+ installations from CRAN\n1,200 GitHub stars\n1,500 citations in peer-reviewed articles\n50 code contributors\n\nWon the 2025 Brian Bole Award of Excellence from R in Pharma\nWon the 2021 American Statistical Association (ASA) Innovation in Programming Award\nWon the 2024 Posit Pharma Table Contest"
   },
   {
-    "objectID": "slides/workshop/index.html#pharmaverse-30-day-cran-downloads",
-    "href": "slides/workshop/index.html#pharmaverse-30-day-cran-downloads",
+    "objectID": "slides/workshop/index.html#day-cran-downloads",
+    "href": "slides/workshop/index.html#day-cran-downloads",
     "title": "An Introduction to {gtsummary}",
-    "section": "{pharmaverse} 30-day CRAN Downloads",
-    "text": "{pharmaverse} 30-day CRAN Downloads\n\n\n\n\n\n\n\n\n\n\n\nFigure contains 30-day downloads for all summary table packages on CRAN."
+    "section": "30-day CRAN Downloads",
+    "text": "30-day CRAN Downloads\n\n\n\n\n\n\n\n\n\n\n\nFigure contains 30-day downloads for all summary table packages on CRAN."
   },
   {
     "objectID": "slides/workshop/index.html#gtsummary-overview",
