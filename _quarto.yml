@@ -6,9 +6,8 @@ project:
     - license.qmd
     - slides/workshop/index.qmd
   resources:
-    # shared across the deck; referenced as ../images/ and ../save_flex_docx/
+    # shared across the deck; referenced as ../images/
     - slides/images/**
-    - slides/save_flex_docx/**
 
 website:
   page-navigation: true

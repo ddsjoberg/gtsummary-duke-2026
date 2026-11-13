@@ -24,7 +24,6 @@ Section content lives in `slides/gtsummary/`:
 Shared assets sit one level up, in `slides/`:
 
 - `slides/images/` — every image, referenced as `../images/<file>`
-- `slides/save_flex_docx/` — the Word/PDF example, as `../save_flex_docx/<file>`
 - `slides/slides.scss` and `slides/title-slide.html` — theme and title partial
 
 **Quarto resolves relative paths in an included file against the *including*
@@ -36,9 +35,9 @@ The title partial takes the hero logo from a `hero-logo` metadata field rather
 than hard-coding it.
 
 `_quarto.yml` uses an explicit `render:` allowlist rather than globs — adding a
-page means adding it there, or it will not be rendered. `slides/images/**` and
-`slides/save_flex_docx/**` are listed under `project: resources:` so they are
-copied even when a reference lives in a template partial or raw HTML.
+page means adding it there, or it will not be rendered. `slides/images/**` is
+listed under `project: resources:` so images are copied even when a reference
+lives in a template partial or raw HTML.
 
 **Never start a chunk label with `tbl-`, `fig-` or `lst-`.** Quarto reads those
 prefixes as cross-reference targets, wraps the output in a float and prints an
