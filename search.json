@@ -39,7 +39,7 @@
     "href": "slides/workshop/index.html#section",
     "title": "An Introduction to {gtsummary}",
     "section": "",
-    "text": "How it started\n\n\nBegan to address reproducibility issues while working in academia\nGoal to build a package to summarize study results with code that was both simple and customizable\n\n\n\nHow it’s going\n\n\nThe stats\n\n2,400,000+ installations from CRAN\n1,200 GitHub stars\n1,600 citations in peer-reviewed articles\n50 code contributors\n\nWon the 2025 Brian Bole Award of Excellence from R in Pharma\nWon the 2021 American Statistical Association (ASA) Innovation in Programming Award\nWon the 2024 Posit Pharma Table Contest"
+    "text": "How it started\n\n\nBegan to address reproducibility issues while working in academia\nGoal to build a package to summarize study results with code that was both simple and customizable\n\n\n\nHow it’s going\n\n\nThe stats\n\n2,400,000+ installations from CRAN\n1,200 GitHub stars\n1,500 citations in peer-reviewed articles\n50 code contributors\n\nWon the 2025 Brian Bole Award of Excellence from R in Pharma\nWon the 2021 American Statistical Association (ASA) Innovation in Programming Award\nWon the 2024 Posit Pharma Table Contest"
   },
   {
     "objectID": "slides/workshop/index.html#pharmaverse-30-day-cran-downloads",
@@ -147,25 +147,18 @@
     "text": "…and can be extracted\ngather_ard() returns the ARDs behind every number in the table.\n\nard &lt;- gather_ard(tbl)\n\nard$tbl_summary |&gt;\n  dplyr::filter(variable == \"AGE\", stat_name %in% c(\"median\", \"p25\", \"p75\"))\n\n# An ARD data frame: 6 × 12\n  group1 group1_level variable variable_level context stat_name stat_label   stat fmt_fun warning error  gts_column\n  &lt;chr&gt;  &lt;list&gt;       &lt;chr&gt;    &lt;list&gt;         &lt;chr&gt;   &lt;chr&gt;     &lt;chr&gt;      &lt;list&gt; &lt;list&gt;  &lt;list&gt;  &lt;list&gt; &lt;chr&gt;     \n1 ARM2   Placebo      AGE      &lt;NULL&gt;         summary median    Median         76 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_1    \n2 ARM2   Placebo      AGE      &lt;NULL&gt;         summary p25       Q1             69 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_1    \n3 ARM2   Placebo      AGE      &lt;NULL&gt;         summary p75       Q3             82 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_1    \n4 ARM2   Xanomeline   AGE      &lt;NULL&gt;         summary median    Median         77 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_2    \n5 ARM2   Xanomeline   AGE      &lt;NULL&gt;         summary p25       Q1             71 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_2    \n6 ARM2   Xanomeline   AGE      &lt;NULL&gt;         summary p75       Q3             81 &lt;fn&gt;    &lt;NULL&gt;  &lt;NULL&gt; stat_2    \n\n\n\n\n\nARDs hold both the raw and formatted values. Save them (rds, json, …), reuse them for QC, or feed them into other outputs. ARDs are built with {cards}."
   },
   {
+    "objectID": "slides/workshop/index.html#or-start-from-an-ard",
+    "href": "slides/workshop/index.html#or-start-from-an-ard",
+    "title": "An Introduction to {gtsummary}",
+    "section": "…or start from an ARD",
+    "text": "…or start from an ARD\nThe tbl_ard_*() functions build a table directly from an ARD.\n\n\n\nard &lt;-\n  cards::ard_stack(\n    adsl,\n    .by = ARM2,\n    cards::ard_summary(variables = AGE),\n    cards::ard_tabulate_value(variables = FEMALE),\n    .attributes = TRUE,\n    .missing = TRUE\n  )\n\ntbl_ard &lt;-\n  ard |&gt;\n  gtsummary::tbl_ard_summary(by = ARM2)\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nPlacebo1\nXanomeline1\n\n\n\n\nAge\n76.0 (69.0, 82.0)\n77.0 (71.0, 81.0)\n\n\nFemale\n53 (61.6%)\n90 (53.6%)\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n\n\n\n\n\n\n\n\n\n\nThe family: tbl_ard_summary(), tbl_ard_continuous(), tbl_ard_wide_summary(), tbl_ard_hierarchical(), and tbl_ard_strata(). Compute the statistics anywhere, then let {gtsummary} format them."
+  },
+  {
     "objectID": "slides/workshop/index.html#print-engines-1",
     "href": "slides/workshop/index.html#print-engines-1",
     "title": "An Introduction to {gtsummary}",
     "section": "Print engines",
     "text": "Print engines"
-  },
-  {
-    "objectID": "slides/workshop/index.html#one-step-word-export",
-    "href": "slides/workshop/index.html#one-step-word-export",
-    "title": "An Introduction to {gtsummary}",
-    "section": "One-step Word export",
-    "text": "One-step Word export\n# one-step export to a Word document\ntbl |&gt; save_flex_docx(path = \"table1.docx\")\nsave_flex_docx() writes any {gtsummary} (or {flextable}) table to a submission-ready Word document in a single step.\n\n\nReport headers & footers — we can now place customized output into the header and footer areas of the word document, and place field codes (e.g. Page X of Y)\nSource notes & footnotes — by default, footnotes, source notes, and abbreviations are placed in the Word document’s footer area\nTemplates & page setup — supply a Word template= or pr_section= to control page size, margins, and landscape orientation\n\n\nThe AE table on the next slide is built with a custom header_ft, three source notes (the last carries the git SHA), and saved to the repo — then converted to PDF."
-  },
-  {
-    "objectID": "slides/workshop/index.html#save_flex_docx-output",
-    "href": "slides/workshop/index.html#save_flex_docx-output",
-    "title": "An Introduction to {gtsummary}",
-    "section": "save_flex_docx() output",
-    "text": "save_flex_docx() output"
   },
   {
     "objectID": "slides/workshop/index.html#themes-1",
