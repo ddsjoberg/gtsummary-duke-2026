@@ -63,3 +63,46 @@ ard$tbl_summary |>
 ARDs hold both the raw and formatted values. Save them (rds, json, …), reuse them for QC, or feed them into other outputs. ARDs are built with [{cards}](https://pharmaverse.github.io/cards/).
 :::
 :::
+
+## ...or start from an ARD
+
+The `tbl_ard_*()` functions build a table directly from an ARD.
+
+::: {.columns}
+::: {.column width="65%"}
+
+```{r}
+#| label: ard-first-build
+ard <-
+  cards::ard_stack(
+    adsl,
+    .by = ARM2,
+    cards::ard_summary(variables = AGE),
+    cards::ard_tabulate_value(variables = FEMALE),
+    .attributes = TRUE,
+    .missing = TRUE
+  )
+
+tbl_ard <-
+  ard |>
+  gtsummary::tbl_ard_summary(by = ARM2)
+```
+
+:::
+
+::: {.column width="35%"}
+
+```{r}
+#| label: ard-first-table
+#| echo: false
+tbl_ard
+```
+
+:::
+:::
+
+::: aside
+::: {.small}
+The family: `tbl_ard_summary()`, `tbl_ard_continuous()`, `tbl_ard_wide_summary()`, `tbl_ard_hierarchical()`, and `tbl_ard_strata()`. Compute the statistics anywhere, then let {gtsummary} format them.
+:::
+:::
