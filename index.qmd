@@ -22,20 +22,36 @@ more, with sensible defaults and a high degree of customization.
 In this seminar, we will introduce {gtsummary} and walk through how it
 fits into a reproducible reporting workflow. Topics include:
 
--   **{gtsummary} fundamentals:** Creating demographic and summary
-    tables with `tbl_summary()`, adding statistics, p-values, and
-    overall columns, and customizing labels and formatting.
+-   **{gtsummary} fundamentals:** Building summary tables with
+    `tbl_summary()`; customizing statistics, labels, and rounding; and
+    extending tables with `add_*()` functions (overall columns, N,
+    p-values, and group differences, including adjusted differences)
+    and `modify_*()` functions (headers, spanning headers, and
+    footnotes).
 
--   **Combining and extending tables:** Hierarchical summaries,
-    merging and stacking tables, and choosing a print engine to export
-    to HTML, Word, PDF, and more.
+-   **Hierarchical and combined tables:** Nested summaries such as
+    adverse event tables with `tbl_hierarchical()`, including sorting
+    and filtering, and assembling complex tables from simple parts with
+    `tbl_merge()` and `tbl_stack()`.
 
--   **Analysis Results Data (ARD):** How {gtsummary} and ARDs work
-    together by design, so the numbers in your tables are traceable and
-    reusable.
+-   **Analysis Results Data (ARD):** How every number in a {gtsummary}
+    table is saved as a machine-readable ARD that you can extract with
+    `gather_ard()`, and how the `tbl_ard_*()` functions build tables
+    directly from ARDs created with {cards}.
 
-By the end of the session, you will know how to get started with
-{gtsummary} and where to go next to tailor it to your own work.
+-   **Print engines and themes:** Rendering tables with {gt},
+    {flextable}, and other engines, and setting defaults once with
+    themes, from journal styles (e.g. JAMA) to compact formatting and
+    translation.
+
+-   **Coding agents:** Writing your table standards down in `AGENTS.md`
+    and `SKILL.md` files so an AI coding agent follows them without
+    constant reminders.
+
+No prior {gtsummary} experience is needed; familiarity with R and the
+tidyverse is assumed. By the end of the session, you will know how to
+get started with {gtsummary} and where to go next to tailor it to your
+own work.
 
 ## Slides
 
