@@ -5,7 +5,7 @@
 ::: {.fragment}
 ### `r fontawesome::fa("table-cells", fill = fa_fill)` Consistent verbs, every table
 
-One consistent set of `tbl_*()` verbs — from a *demographics table* to AE and lab tables.
+One consistent set of `tbl_*()` verbs — from a *demographics table* to nested adverse event tables.
 :::
 
 ::: {.fragment}
@@ -30,10 +30,18 @@ A shared theme captures your house standards; a [coding agent applies them]{.emp
 ::: {.small}
 The [full function reference](http://www.danieldsjoberg.com/gtsummary/reference/index.html), and a detailed [`tbl_summary()` vignette](http://www.danieldsjoberg.com/gtsummary/articles/tbl_summary.html)
 :::
+
+<br>
+
+`r fontawesome::fa("chalkboard-user", fill = fa_fill)` [Enterprise {gtsummary}](https://ddsjoberg.github.io/rpharma-workshop-gtsummary-adoption-2026/) — the full R/Pharma 2026 workshop
+
+::: {.small}
+More detail on everything in this talk, from the workshop much of this deck is adapted from
+:::
 :::
 
 ::: {.column width="50%"}
-`r fontawesome::fa("hospital", fill = fa_fill)` [{cardinal}](https://pharmaverse.github.io/cardinal/) — FDA safety-table catalog
+`r fontawesome::fa("images", fill = fa_fill)` [Table gallery](https://www.danieldsjoberg.com/gtsummary/articles/gallery.html) — worked examples of common tables
 
 <br>
 

@@ -160,11 +160,7 @@ Other helpful functions we're not covering:
 
 ::: {.small}
 
-- `tbl_hierarchical_count()`: similar to `tbl_hierarchical()` for counts instead of rates
-
 - `tbl_cross()`: cross tabulations
-
-- `tbl_continuous()`: summarizing continuous variables by 2 categorical variables
 
 - `tbl_wide_summary()`: similar to `tbl_summary()` but statistics are presented in separate columns
 
