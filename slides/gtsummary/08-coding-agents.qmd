@@ -43,7 +43,7 @@ Cross-cutting: prep data with [tidyverse]{.emphasis}; always `gather_ard()` the 
 ## A gtsummary Skill {.smaller}
 
 ::: {.small}
-The golden path above, encoded. Lives at `.agents/skills/gtsummary-tables/SKILL.md`, with reference files (worked examples) bundled beside it.
+The golden path above, encoded. Lives at `.agents/skills/gtsummary-tables/SKILL.md`.
 :::
 
 ```{r}
