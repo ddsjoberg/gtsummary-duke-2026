@@ -194,11 +194,38 @@ ad_onco |>
 -   `add_p()`: adds a column of p-values
 
 ::: {.small}
--   `add_difference()`: mean and rate differences between two groups. Can also be adjusted differences
-
 -   `add_stat()`: add any statistic you like, placed on the label or the level rows, in a single column or many
 
 -   And many more!
+:::
+
+## Update tbl_summary() with add\_\*()
+
+```{r}
+#| output-location: "column"
+#| code-line-numbers: "7"
+#| label: 'summary-with-difference'
+trial |>
+  tbl_summary(
+    by = trt,
+    include = c(response, death),
+    missing = "no"
+  ) |>
+  add_difference()
+```
+
+::: {.small}
+-   `add_difference()`: adds the difference between two groups (rate differences here, mean differences for continuous variables) with a 95% CI and p-value
+
+-   The difference calculation can be [adjusted]{.emphasis}, e.g. for age and stage:
+
+    `add_difference(test = ~ "emmeans", adj.vars = c(age, stage))`
+:::
+
+::: aside
+::: {.small}
+This example uses `trial`, a simulated trial dataset that ships with {gtsummary}.
+:::
 :::
 
 ## Update tbl_summary() with modify\_\*()
