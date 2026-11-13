@@ -1,0 +1,54 @@
+---
+title: "An Introduction to {gtsummary}"
+author: "Daniel D. Sjoberg"
+event: "Duke BERD Seminar Series"
+hero-logo: "../images/gtsummary-logo.png"
+avatars:
+  - src: "../images/dan-circle.png"
+    alt: "Headshot of Daniel Sjoberg"
+logo: "../images/gtsummary-logo.png"
+footer:  "[ddsjoberg.github.io/gtsummary-duke-2026](https://ddsjoberg.github.io/gtsummary-duke-2026/)"
+editor: source
+engine: knitr
+format:
+  revealjs:
+    theme: ../slides.scss
+    template-partials:
+      - ../title-slide.html
+    transition: fade
+    slide-number: true
+    chalkboard: true
+execute:
+  echo: true
+  message: true
+  freeze: false
+cache: false
+---
+
+```{r}
+#| label: setup-options-gtsummary
+#| echo: false
+options(width = 120)
+```
+
+{{< include ../gtsummary/00-setup.qmd >}}
+
+# {gtsummary} fundamentals
+
+{{< include ../gtsummary/01-background.qmd >}}
+
+{{< include ../gtsummary/02-tbl_summary.qmd >}}
+
+{{< include ../gtsummary/03-tbl_hierarchicial.qmd >}}
+
+{{< include ../gtsummary/04-tbl_merge.qmd >}}
+
+{{< include ../gtsummary/05-ard-first.qmd >}}
+
+{{< include ../gtsummary/06-print_engines.qmd >}}
+
+{{< include ../gtsummary/07-adopt.qmd >}}
+
+{{< include ../gtsummary/08-coding-agents.qmd >}}
+
+{{< include ../gtsummary/09-summary.qmd >}}

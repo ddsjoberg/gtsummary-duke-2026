@@ -1,0 +1,80 @@
+# Themes
+
+## Themes
+
+A [theme]{.emphasis} is set once, before you build any tables, and every table in the session picks it up.
+
+-   `theme_gtsummary_journal("jama")` — defaults matching a journal's guidelines
+
+-   `theme_gtsummary_compact()` — smaller font and cell padding
+
+-   `theme_gtsummary_language("es")` — translate every table
+
+-   `theme_gtsummary_printer(print_engine = "flextable")` — change the print engine
+
+Themes [stack]{.emphasis}: call several, and each one layers onto the last. You can also write your own to capture your group's standards.
+
+::: aside
+::: {.small}
+Full catalog of theme elements: [{gtsummary} themes vignette](https://www.danieldsjoberg.com/gtsummary/articles/themes.html)
+:::
+:::
+
+## Before and after
+
+```{r}
+#| label: theme-demo-code
+#| eval: false
+theme_gtsummary_journal("jama")
+theme_gtsummary_compact()
+
+adsl |>
+  tbl_summary(by = ARM2, include = c(AGE, ETHNIC)) |>
+  add_p()
+```
+
+::: columns
+::: {.column width="50%"}
+
+::: {.small}
+[Package defaults]{.emphasis}
+:::
+
+```{r}
+#| label: theme-before
+#| echo: false
+adsl |>
+  tbl_summary(by = ARM2, include = c(AGE, ETHNIC)) |>
+  add_p()
+```
+
+:::
+
+::: {.column width="50%"}
+
+::: {.small}
+After [JAMA + compact]{.emphasis} themes
+:::
+
+```{r}
+#| label: theme-after
+#| echo: false
+#| message: false
+theme_gtsummary_journal("jama")
+theme_gtsummary_compact()
+
+adsl |>
+  tbl_summary(by = ARM2, include = c(AGE, ETHNIC)) |>
+  add_p()
+```
+
+:::
+:::
+
+```{r}
+#| label: theme-reset
+#| echo: false
+#| message: false
+# clear the theme before the rest of the deck
+reset_gtsummary_theme()
+```

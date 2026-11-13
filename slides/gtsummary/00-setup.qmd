@@ -1,0 +1,72 @@
+# Introduction
+
+```{r}
+#| label: setup-libraries
+#| echo: false
+#| cache: false
+library(gtsummary)
+library(tidyverse)
+library(knitr)
+
+# fill for font awesome icons
+fa_fill <- "#606060"
+```
+
+## Acknowledgements
+
+::: {.columns .v-center-container}
+::: {.column width="60%"}
+<img src="../images/gtsummary-logo.png" alt="gtsummary logo" width="55%"/>
+:::
+
+::: {.column width="40%"}
+This work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/) (CC BY-SA4.0).
+:::
+:::
+
+## Your speaker
+
+```{=html}
+<div class="instructor-cards">
+  <figure>
+    <img src="../images/dan-circle.png" alt="Headshot of Daniel Sjoberg">
+    <figcaption>
+      <span class="name">Daniel D. Sjoberg</span>
+      <span class="role">Executive Director of Data Sciences &amp; Clinical Data Analytics, Kardigan</span>
+    </figcaption>
+  </figure>
+</div>
+```
+
+## Questions
+
+::: {.columns .v-center-container}
+::: {.column width="50%"}
+`r fontawesome::fa("circle-question", fill = fa_fill)` Please ask questions at any time!
+:::
+::: {.column width="50%"}
+![](../images/questions.jpg){width=100%}
+:::
+:::
+
+## What we will cover
+
+1.  [{gtsummary} fundamentals]{.emphasis} — `tbl_summary()`, hierarchical tables, merging and stacking.
+
+2.  [Analysis Results Data]{.emphasis} — every number in a table is saved, machine-readable, and extractable.
+
+3.  [Print engines]{.emphasis} — {gt}, {flextable}, and Word output.
+
+4.  [Themes]{.emphasis} — set your defaults once, for every table.
+
+5.  [Coding agents]{.emphasis} — writing your standards down so an agent follows them.
+
+## About you
+
+We are assuming you:
+
+-   Are [comfortable in R]{.emphasis} and have seen the [tidyverse]{.emphasis} — the native pipe, {dplyr}.
+
+-   [No prior {gtsummary} experience]{.emphasis} is needed.
+
+This is an [introduction]{.emphasis} to {gtsummary}: what it does, how to customize it, and where to go next.

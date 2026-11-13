@@ -1,0 +1,65 @@
+# Analysis Results Data
+
+## Every number is saved
+
+::: {.columns .v-center-container}
+::: {.column width="40%"}
+
+- Every calculation in {gtsummary} is stored as an [Analysis Results Dataset (ARD)]{.emphasis}
+
+- An ARD is a long, [machine-readable]{.emphasis} data frame: one row per statistic
+
+```{=html}
+<div class="hex-flow">
+  <figure>
+    <img src="../images/cards-hex.png" alt="cards package hex logo">
+    <figcaption>ARDs</figcaption>
+  </figure>
+  <span class="hex-flow-arrow" aria-hidden="true">&#8646;</span>
+  <figure>
+    <img src="../images/gtsummary-logo.png" alt="gtsummary package hex logo">
+    <figcaption>Tables</figcaption>
+  </figure>
+</div>
+```
+
+:::
+
+::: {.column width="60%"}
+
+```{r}
+#| label: ard-example-tbl
+tbl <-
+  adsl |>
+  tbl_summary(
+    by = ARM2,
+    include = c(AGE, FEMALE)
+  ) |>
+  add_p()
+tbl
+```
+
+:::
+:::
+
+## ...and can be extracted
+
+`gather_ard()` returns the ARDs behind every number in the table.
+
+```{r}
+#| label: ard-example-extract
+#| message: true
+#| R.options:
+#|   pillar.print_max: 6
+#|   pillar.print_min: 6
+ard <- gather_ard(tbl)
+
+ard$tbl_summary |>
+  dplyr::filter(variable == "AGE", stat_name %in% c("median", "p25", "p75"))
+```
+
+::: aside
+::: {.small}
+ARDs hold both the raw and formatted values. Save them (rds, json, …), reuse them for QC, or feed them into other outputs. ARDs are built with [{cards}](https://pharmaverse.github.io/cards/).
+:::
+:::

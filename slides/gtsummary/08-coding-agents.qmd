@@ -1,0 +1,58 @@
+# Coding agents
+
+## From chat LLM to coding partner
+
+A [coding agent]{.emphasis} (e.g. Claude Code) lives inside your project: it reads your files, runs R, and iterates — and it follows instructions you [commit to the repo]{.emphasis}.
+
+The goal: a coding partner that adheres to your domain standards *without constant reminders.*
+
+## `AGENTS.md` and `SKILL.md`
+
+Two ways to write your standards down for a coding agent. Both are [committed to the repo]{.emphasis}, so every agent on the project reads the same thing.
+
+-   [`AGENTS.md`]{.emphasis} — how we work [in this repo, every time]{.emphasis}. House code style, where the data comes from, project layout, how to build. Lives at the root; the agent loads it for every task.
+
+-   [`SKILL.md`]{.emphasis} — how to do [one particular task]{.emphasis}, loaded [only when that task comes up]{.emphasis}. Its `description` is the trigger the agent matches against, so it is written as concrete situations, not a summary.
+
+::: aside
+::: {.small}
+Rule of thumb: if it applies to *every* task in the repo, it belongs in `AGENTS.md`; if it applies to *one kind* of task, make it a skill.
+:::
+:::
+
+## The golden path
+
+Give the agent an explicit [priority order]{.emphasis} for building a table:
+
+
+1.  [Set the theme]{.emphasis} — your group's theme, right after loading packages.
+
+2.  [Use {gtsummary} functions]{.emphasis} — `tbl_summary()`, `tbl_hierarchical()`, …
+
+3.  [ARD-first for complex/custom]{.emphasis} — build ARDs with {cards}/{cardx}, render with `gtsummary::tbl_ard_*()`.
+
+4.  [Last resort]{.emphasis} — build the ARD yourself, then `gtsummary::as_gtsummary()`.
+
+
+::: aside
+::: {.small}
+Cross-cutting: prep data with [tidyverse]{.emphasis}; always `gather_ard()` the result for QC and traceability.
+:::
+:::
+
+## A gtsummary Skill {.smaller}
+
+::: {.small}
+The golden path above, encoded. Lives at `.agents/skills/gtsummary-tables/SKILL.md`, with reference files (worked examples) bundled beside it.
+:::
+
+```{r}
+#| echo: false
+#| output: asis
+cat(
+  "``` md",
+  readLines("../../.agents/skills/gtsummary-tables/SKILL.md"),
+  "```",
+  sep = "\n"
+)
+```
