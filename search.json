@@ -39,7 +39,7 @@
     "href": "slides/workshop/index.html#section",
     "title": "An Introduction to {gtsummary}",
     "section": "",
-    "text": "How it started\n\n\nBegan to address reproducibility issues while working in academia\nGoal to build a package to summarize study results with code that was both simple and customizable\n\n\n\nHow it’s going\n\n\nThe stats\n\n2,400,000+ installations from CRAN\n1,200 GitHub stars\n1,500 citations in peer-reviewed articles\n50 code contributors\n\nWon the 2025 Brian Bole Award of Excellence from R in Pharma\nWon the 2021 American Statistical Association (ASA) Innovation in Programming Award\nWon the 2024 Posit Pharma Table Contest"
+    "text": "How it started\n\n\nBegan to address reproducibility issues while working in academia\nGoal to build a package to summarize study results with code that was both simple and customizable\n\n\n\nHow it’s going\n\n\nThe stats\n\n2,400,000+ installations from CRAN\n1,200 GitHub stars\n1,600 citations in peer-reviewed articles\n50 code contributors\n\nWon the 2025 Brian Bole Award of Excellence from R in Pharma\nWon the 2021 American Statistical Association (ASA) Innovation in Programming Award\nWon the 2024 Posit Pharma Table Contest"
   },
   {
     "objectID": "slides/workshop/index.html#day-cran-downloads",
@@ -95,7 +95,14 @@
     "href": "slides/workshop/index.html#update-tbl_summary-with-add_-1",
     "title": "An Introduction to {gtsummary}",
     "section": "Update tbl_summary() with add_*()",
-    "text": "Update tbl_summary() with add_*()\n\n\nad_onco |&gt;\n  tbl_summary(\n    by = ARM2,\n    include = c(TUMOR_SIZE, PFS_EVENT),\n    missing = \"no\"\n  ) |&gt;\n  add_n() |&gt;\n  add_p(\n    pvalue_fun = scales::label_pvalue()\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nPlacebo\nN = 961\nXanomeline\nN = 1771\np-value2\n\n\n\n\nTumor Size, mm\n25\n78 (38, 96)\n67 (26, 92)\n0.659\n\n\nProgression\n273\n6 (6.3%)\n9 (5.1%)\n0.687\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n2 Wilcoxon rank sum exact test; Pearson’s Chi-squared test\n\n\n\n\n\n\n\n\n\nadd_n(): adds a column non-missing counts\nadd_p(): adds a column of p-values\n\n\n\nadd_difference(): mean and rate differences between two groups. Can also be adjusted differences\nadd_stat(): add any statistic you like, placed on the label or the level rows, in a single column or many\nAnd many more!"
+    "text": "Update tbl_summary() with add_*()\n\n\nad_onco |&gt;\n  tbl_summary(\n    by = ARM2,\n    include = c(TUMOR_SIZE, PFS_EVENT),\n    missing = \"no\"\n  ) |&gt;\n  add_n() |&gt;\n  add_p(\n    pvalue_fun = scales::label_pvalue()\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nN\nPlacebo\nN = 961\nXanomeline\nN = 1771\np-value2\n\n\n\n\nTumor Size, mm\n25\n78 (38, 96)\n67 (26, 92)\n0.659\n\n\nProgression\n273\n6 (6.3%)\n9 (5.1%)\n0.687\n\n\n\n1 Median (Q1, Q3); n (%)\n\n\n2 Wilcoxon rank sum exact test; Pearson’s Chi-squared test\n\n\n\n\n\n\n\n\n\nadd_n(): adds a column non-missing counts\nadd_p(): adds a column of p-values\n\n\n\nadd_stat(): add any statistic you like, placed on the label or the level rows, in a single column or many\nAnd many more!"
+  },
+  {
+    "objectID": "slides/workshop/index.html#update-tbl_summary-with-add_-2",
+    "href": "slides/workshop/index.html#update-tbl_summary-with-add_-2",
+    "title": "An Introduction to {gtsummary}",
+    "section": "Update tbl_summary() with add_*()",
+    "text": "Update tbl_summary() with add_*()\n\n\ntrial |&gt;\n  tbl_summary(\n    by = trt,\n    include = c(response, death),\n    missing = \"no\"\n  ) |&gt;\n  add_difference()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCharacteristic\nDrug A\nN = 981\nDrug B\nN = 1021\nDifference2\n95% CI2\np-value2\n\n\n\n\nTumor Response\n28 (29%)\n33 (34%)\n-4.2%\n-18%, 9.9%\n0.6\n\n\nPatient Died\n52 (53%)\n60 (59%)\n-5.8%\n-21%, 9.0%\n0.5\n\n\n\n1 n (%)\n\n\n2 2-sample test for equality of proportions with continuity correction\n\n\nAbbreviation: CI = Confidence Interval\n\n\n\n\n\n\n\n\n\n\nadd_difference(): adds the difference between two groups (rate differences here, mean differences for continuous variables) with a 95% CI and p-value\nThe difference calculation can be adjusted, e.g. for age and stage:\nadd_difference(test = ~ \"emmeans\", adj.vars = c(age, stage))\n\n\n\n\n\nThis example uses trial, a simulated trial dataset that ships with {gtsummary}."
   },
   {
     "objectID": "slides/workshop/index.html#update-tbl_summary-with-modify_",
